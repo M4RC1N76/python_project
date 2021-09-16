@@ -1,2 +1,2 @@
-# pyhton_Project
+# pyhton_project
 # travel_bucket_list
