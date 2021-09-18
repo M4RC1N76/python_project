@@ -12,3 +12,7 @@ CREATE TABLE cities(
     name VARCHAR(255),
     visited BOOLEAN
 );
+
+INSERT INTO countries (name, visited) VALUES ('Italy', FALSE); -- country changed to countries
+
+INSERT INTO cities (name, visited) VALUES ('Naples', FALSE); -- city changed into cities
