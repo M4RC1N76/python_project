@@ -1,14 +1,14 @@
-# from flask import Flask, render_template, redirect
-# from controllers_city_controller import city_blueprint
-# from controllers_country_controller import country_blueprint
+from flask import Flask, render_template, redirect
+from controllers.cities_controller import cities_blueprint
+from controllers.countries_controller import countries_blueprint
 
-# app = Flask(__name__)
+app = Flask(__name__)
 
-# @app.route('/')
-# def home():
-#     return render_template('index.html')
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-# app.register_blueprint(city_blueprint)
+app.register_blueprint(cities_blueprint)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
