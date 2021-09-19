@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for city in cities  %}
+
+    <div>
+        <a href="/cities/{{city.id}}">{{city.get_details()}}</a>
+    </div>
+    
+{% endfor %}
+
+{% endblock content %}
