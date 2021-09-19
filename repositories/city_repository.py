@@ -14,12 +14,13 @@ def save(city):
 
 def select_all():
     cities = []
-
     sql = "SELECT * FROM cities"
     results = run_sql(sql)
 
+    countries_list = country_repository.select_all()
+
     for row in results:
-        country = country_repository.select(row['id']) # somethings wrong - not sure what
+        country = Country(row['name'], row['visited'], countries_list[row['id'] -1]) # somethings wrong - not sure what
         city = City(row['name'], row['visited'], row['id'])
-        city.append(city)
+        cities.append(city)
     return city
