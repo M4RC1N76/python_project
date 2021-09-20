@@ -1,15 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Visited</th>
+    </tr>
+    {% for country in countries %}
+    <tr>
+        <td>{{country.name}}</td>
+        <td>{{country.visited}}</td>
+        <td><a href="/countries/{{country.id}}">Show Info</a></td>
+        <td><a href="/countries/{{country.id}}/edit">Edit</a></td>
+        <td><a href="/countries/{{country.id}}/delete">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
 
 
-{% for country in countries %}
-    <div>
-        <a href="/countries/{{country.id}}">{{country.name}}</a>
-        <address> <!-- check if it should be visited instead address-->
-            {{country.visited}}
-        </address>
-    </div>
-{% endfor %}
 <br>
 <a href="/countries/new">Add Country</a> <!-- link takes you to form-->
+<br>
 {% endblock %}

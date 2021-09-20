@@ -29,7 +29,7 @@ def create_city():
     name = request.form['name']
     visited = request.form['visited']
     country_id = request.form['country_id']
-    country = country_repository.select(country_id)
+    country = country_repository.select(country_id) # check if wrong
     city = City(name, country_id, visited)  #old solution from homework 
     # save to db
     city_repository.save(city)
@@ -39,7 +39,7 @@ def create_city():
 # GET '/cities/<id>'
 @cities_blueprint.route("/cities/<id>", methods=['GET'])
 def show_city(id):
-    city = city_repository.select(id) # wrong line
+    city = city_repository.select_all # line changed from select(id)
     return render_template('cities/show.html', city=city)
 
 # EDIT

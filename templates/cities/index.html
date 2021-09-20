@@ -1,14 +1,19 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block content %}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Visited</th>
+    </tr>
+    {% for city in cities %}
+    <tr>
+        <td>{{city.name}}</td>
+        <td>{{city.visited}}</td>
+        <td><a href="/cities/{{city.id}}">Show Info</a></td>
+        <td><a href="/cities/{{city.id}}/edit">Edit</a></td>
+        <td><a href="/cities/{{city.id}}/delete">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
 
-{% for city in cities  %}
-
-    <div>
-        <a href="/cities/{{city.id}}">{{city.name}} is in {{city.country.name}}</a>
-        
-    </div>
-    
-{% endfor %}
-<br>
-<a href="/cities/new">Add City</a>
-{% endblock content %}
+{% endblock %}

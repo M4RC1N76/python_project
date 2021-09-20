@@ -2,8 +2,8 @@ from db.run_sql import run_sql
 from models.country import Country
 
 def save(country):
-    sql = "INSERT * INTO countries (name, visited, id) VALUES (%s, %s) RETURNING *"
-    values = [country.name, country.visited, country.id]
+    sql = "INSERT INTO countries (name, visited) VALUES (%s, %s) RETURNING *" # removed id from brackets
+    values = [country.name, country.visited] # country.id was wrong and removed
     results = run_sql(sql, values)
     id = results[0]['id']
     country.id = id
