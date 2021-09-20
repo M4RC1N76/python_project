@@ -12,6 +12,7 @@ def save(city):
     city.id = id
     return city
 
+# SELECT
 def select_all():
     cities = []
     sql = "SELECT * FROM cities"
@@ -35,3 +36,14 @@ def select(id):
         country = country_repository.select(id) # wrong line
         city = City(result['name'], country, result['visited'], result['id'])
     return city
+
+# DELETE
+def delete_all():
+    sql = "DELETE  FROM cities"
+    run_sql
+
+
+def delete(id):
+    sql = "DELETE  FROM cities WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

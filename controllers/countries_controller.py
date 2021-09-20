@@ -1,3 +1,4 @@
+from db.run_sql import run_sql
 from flask import Flask, render_template, redirect, Blueprint, request
 from models.city import City
 from models.country import Country
@@ -58,7 +59,9 @@ def update_country(id):
     city = City(name, country, visited, id)
     return redirect('/countries')
 
-
-
-# DELETE
+# DELETE GET
 # DELETE '/countries/<id>'
+@countries_blueprint.route("/countries/<id>/delete", methods=['GET'])
+def delete_country(id):
+    country_repository.delete(id)
+    return redirect('/countries')
