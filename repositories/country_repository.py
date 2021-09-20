@@ -17,4 +17,17 @@ def select_all():
     for row in results:
         country = Country(row['name'], row['visited'], row['id'])
         countries.append(country)
+        
+    return countries
+
+def select(id):
+    country = None
+    sql = "SELECT * FROM countries WHERE id = %s"
+    value = [id]
+    result = run_sql(sql, value)[0] # wrong line
+
+    if result is not None:
+        country = Country(result['name'], result['visited'], result['id'])
+        
+    return country
 

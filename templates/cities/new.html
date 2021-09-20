@@ -10,14 +10,17 @@
 
     <div>
         <label for="visited">Visited:</label>
-        <input type="text" id="visited" name="visited" placeholder="Visited" required autofocus />
+        <select id="visited" name="visited">
+            <option value="true">True</option>
+            <option value="false">False</option> <!--lines 13, 14, 15 fixed-->
+        </select>
     </div>
 
     <div>
         <label for="country">Country:</label>
         <select name="country_id" id="country">
             {% for country in countries  %}
-            <option value="{{ country.id }}">{{ country.name }}</option>
+            <option value="{{ country.id }}">{{ country.name }}</option> <!--check if line is correct-->
                 
             {% endfor %}
         </select>

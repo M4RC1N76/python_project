@@ -3,14 +3,13 @@
 
 
 {% for country in countries %}
-<div>
     <div>
         <a href="/countries/{{country.id}}">{{country.name}}</a>
         <address> <!-- check if it should be visited instead address-->
             {{country.visited}}
         </address>
     </div>
-</div>
 {% endfor %}
-
+<br>
+<a href="/countries/new">Add Country</a> <!-- link takes you to form-->
 {% endblock %}

@@ -17,10 +17,21 @@ def select_all():
     sql = "SELECT * FROM cities"
     results = run_sql(sql)
 
-    countries_list = country_repository.select_all()
-
     for row in results:
-        country = Country(row['name'], row['visited'], countries_list[row['id'] -1]) # somethings wrong - not sure what
-        city = City(row['name'], row['visited'], row['id'])
+        country = country_repository.select(row['country_id'])
+        city = City(row['name'], country, row['visited'], row['id'])
         cities.append(city)
+    
+    return cities
+
+    # add method
+def select(id):
+    city = None
+    sql = "SELECT * FROM cities WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        country = country_repository.select(id) # wrong line
+        city = City(result['name'], country, result['visited'], result['id'])
     return city
