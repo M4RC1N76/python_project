@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<table>
+<br>
+<br>
+<table class="table table-striped">
     <tr>
         <th>Name</th>
         <th>Visited</th>
@@ -10,11 +12,13 @@
     <tr>
         <td>{{city.name}}</td>
         <td>{{city.visited}}</td>
-        <td></td>
+        <td>{{city.country.name}}</td>
         <td><a href="/cities/{{city.id}}/edit">Edit</a></td>
         <td><a href="/cities/{{city.id}}/delete">Delete</a></td>
     </tr>
     {% endfor %}
 </table>
-
+<br>
+<a href="cities/new"><button type="button" class="btn btn-success">+ Add City</button></a>
+<br>
 {% endblock %}

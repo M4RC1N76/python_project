@@ -16,5 +16,5 @@ def run_sql(sql, values = None):
         print(error)  # wrong indentation
     finally:  # wrong indentation
         if conn is not None:  # wrong indentation
-            conn.close()  # wrong indentation
-    return results  # wrong indentation
+            conn.close()
+    return results

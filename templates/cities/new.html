@@ -3,29 +3,29 @@
 
 <form action="/cities" method="post">
 
-    <div>
+    <div class="form-group"> 
         <label for="name">Name:</label>
-        <input type="text" id="name" placeholder="Name" required autofocus />
+        <input class="form-control" type="text" id="name" name="name" placeholder="City name" required autofocus />
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="visited">Visited:</label>
-        <select id="visited" name="visited">
+        <select class="form-control" id="visited" name="visited">
             <option value="true">True</option>
             <option value="false">False</option> <!--lines 13, 14, 15 fixed-->
         </select>
     </div>
 
-    <div>
+    <div class="form-group">
         <label for="country">Country:</label>
-        <select name="country_id" id="country">
+        <select class="form-control" name="country_id" id="country">
             {% for country in countries  %}
             <option value="{{ country.id }}">{{ country.name }}</option> <!--check if line is correct-->
                 
             {% endfor %}
         </select>
     </div>
-    <button type="submit">Add City</button>
+    <button class="btn btn-primary" type="submit">Add City</button>
 </form>
 
 {% endblock content %}

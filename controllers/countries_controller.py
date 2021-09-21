@@ -25,11 +25,9 @@ def new_country():
 # POST '/countries'
 @countries_blueprint.route("/countries", methods=["POST"])
 def create_country():
-    # get (request) the info from the form
     name = request.form['name']
     visited = request.form['visited']
     country = Country(name, visited) #country_repository.select(id)
-    # city = City(name, country, visited, id)
     # create a  country object with above info
     country_repository.save(country)
     return redirect("/countries")
@@ -45,18 +43,17 @@ def show_country(id):
 # GET '/countries/<id>/edit'
 @countries_blueprint.route("/countries/<id>/edit", methods=['GET'])
 def edit_country(id):
-    # city = city_repository.select(id)
-    # countries = country_repository.select_all()
-    return render_template('countries/edit.html', countries=countries)
+    country = country_repository.select(id)
+    return render_template('countries/edit.html', country=country)
 
 # UPDATE
 # PUT '/countries/<id>'
 @countries_blueprint.route("/countries/<id>", methods=['POST'])
 def update_country(id):
-    name = request.form['name']
     visited = request.form['visited']
-    country = country_repository.select(name, visited, id)
-    city = City(name, country, visited, id)
+    country = country_repository.select(id)
+    updated_country = Country(country.name, visited, id)
+    country_repository.update(updated_country)
     return redirect('/countries')
 
 # DELETE GET

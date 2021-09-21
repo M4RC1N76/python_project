@@ -1,20 +1,23 @@
 body{
     font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+    /* background-image: url("https://cdn.shopify.com/s/files/1/0269/2792/3234/articles/world-travelling-map-planning_1004x.jpg?v=1593720286"); */
     background-color: rgb(228, 246, 253);
     color: black;
+    display: flexbox;
 
 }
-
+/* 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(62, 55, 138);
-    text-align: right;
-}
+    background-color: rgb(100, 210, 235);
+    text-align: left;
+    color:aliceblue;
+} */
 
-li {
+/* li {
     float: left;
 }
 
@@ -25,13 +28,22 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
 }
-/* Change the link color to #111 (black) on hover */
+
 li a:hover {
     background-color: #111;
-}
+} */
 
 form {
     display: flexbox;
+}
+
+input[type="text"], select {
+    width: 40% !important;
+    margin: 0 auto !important;
+}
+
+a {
+    color:red;
 }
 
 section {

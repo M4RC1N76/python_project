@@ -7,18 +7,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
     <title>Universe is your oyster</title>
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="menu">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+            <ul class="nav navbar-nav">
                 <li><a href="/">Home Page</a></li>
                 <li><a href="/countries">Countries</a></li>
                 <!-- <li><a href="/countries/new">New Country</a></li> -->
                 <li><a href="/cities">Cities</a></li>
                 <!-- <li><a href="/cities/new">New City</a></li> -->
             </ul>
+            </div>
         </nav>
     </header>
     <div class="container">

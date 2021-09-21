@@ -12,7 +12,7 @@ cities_blueprint = Blueprint('cities', __name__)
 # GET '/cities
 @cities_blueprint.route('/cities')
 def cities():
-    cities = city_repository.select_all()
+    cities = city_repository.select_all() # ERROR
 
     return render_template("cities/index.html", cities = cities)
 
@@ -24,13 +24,14 @@ def new_city():
 
 
 # CREATE
-# POST '/cities/new
+# POST '/cities
+@cities_blueprint.route('/cities', methods=['POST'])
 def create_city():
     name = request.form['name']
     visited = request.form['visited']
     country_id = request.form['country_id']
-    country = country_repository.select(country_id) # check if wrong
-    city = City(name, country_id, visited)  #old solution from homework 
+    country = country_repository.select(country_id)
+    city = City(name, country, visited)
     # save to db
     city_repository.save(city)
     return redirect("/cities")
@@ -44,23 +45,22 @@ def show_city(id):
 
 # EDIT
 # GET '/cities/<id>/edit'
-
-
 @cities_blueprint.route("/cities/<id>/edit", methods=['GET'])
 def edit_country(id):
-    # city = city_repository.select(id)
+    city = city_repository.select(id)
     # countries = country_repository.select_all()
-    return render_template('cities/edit.html', cities=cities)
+    return render_template('cities/edit.html', city=city)
 
 # UPDATE
-# PUT '/cities/<id>'
-@cities_blueprint.route("/cities/<id>", methods=['POST'])
+# PUT '/cities/<id>' updating existing city
+@cities_blueprint.route("/cities/<id>/edit", methods=['POST'])
 def update_city(id):
-    name = request.form['name']
     visited = request.form['visited']
-    country = country_repository.select(name, visited, id)
-    city = City(name, country, visited, id)
-    return redirect('/countries')
+    city = city_repository.select(id)
+    country = country_repository.select(city.country.id)
+    update_city = City(city.name, country, visited, id)
+    city_repository.update(update_city)
+    return redirect('/cities')
 
 # DELETE
 # DELETE '/cities/<id>'

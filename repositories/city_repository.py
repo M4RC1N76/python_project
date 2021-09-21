@@ -5,8 +5,8 @@ from models.city import City
 import repositories.country_repository as country_repository
 
 def save(city):
-    sql = "INSERT * INTO cities (name, visited, id) VALUES (%s, %s, %s) RETURNING *"
-    values = [city.name, city.visited, city.id] # it was city.country.id
+    sql = "INSERT INTO cities (name, visited, country_id) VALUES (%s, %s, %s) RETURNING *" # country_id
+    values = [city.name, city.visited, city.country.id]  # city.country.id
     results = run_sql(sql, values)
     id = results[0]['id']
     city.id = id
@@ -19,7 +19,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        country = country_repository.select(row['country_id'])
+        print(row)
+        country = country_repository.select(row['country_id']) # ERROR
         city = City(row['name'], country, row['visited'], row['id'])
         cities.append(city)
     
@@ -39,11 +40,20 @@ def select(id):
 
 # DELETE
 def delete_all():
-    sql = "DELETE  FROM cities"
+    sql = "DELETE FROM cities"
     run_sql
 
 
 def delete(id):
-    sql = "DELETE  FROM cities WHERE id = %s"
+    sql = "DELETE FROM cities WHERE id = %s"
     values = [id]
+    run_sql(sql, values)
+
+# UPDATE METHOD to be added
+
+
+def update(city):
+    sql = "UPDATE cities SET (name, visited) = (%s, %s) WHERE id = %s"
+    values = [city.name, city.visited, city.id] # city.id
+    print(values)
     run_sql(sql, values)
