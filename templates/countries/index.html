@@ -10,14 +10,15 @@
     <tr>
         <td>{{country.name}}</td>
         <td>{{country.visited}}</td>
-        <td><a href="/countries/{{country.id}}/edit">Edit</a></td>
+        <td><a class="edit" href="/countries/{{country.id}}/edit">Edit</a></td>
         <td><a href="/countries/{{country.id}}/delete">Delete</a></td>
     </tr>
     {% endfor %}
 </table>
 <br>
-<a href="/countries/new"><button type="button" class="btn btn-success">+ Add Country</button>
-</a>
+<p class="center">
+<a class="addbtn" href="/countries/new"><button type="button" class="btn btn-success">+ Add Country</button></a>
+</p>
 <br>
 <br>
 {% endblock %}

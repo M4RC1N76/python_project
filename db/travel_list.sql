@@ -11,8 +11,10 @@ CREATE TABLE cities(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     visited BOOLEAN,
-    country_id INT REFERENCES countries(id)
+    country_id INT REFERENCES countries(id) ON DELETE CASCADE
 );
+
+
 
 INSERT INTO countries (name, visited) VALUES ('Italy', FALSE); -- country changed to countries
 INSERT INTO countries (name, visited) VALUES ('Wales', FALSE); 

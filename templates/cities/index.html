@@ -13,12 +13,15 @@
         <td>{{city.name}}</td>
         <td>{{city.visited}}</td>
         <td>{{city.country.name}}</td>
-        <td><a href="/cities/{{city.id}}/edit">Edit</a></td>
+        <td><a class="edit" href="/cities/{{city.id}}/edit">Edit</a></td>
         <td><a href="/cities/{{city.id}}/delete">Delete</a></td>
     </tr>
     {% endfor %}
 </table>
 <br>
-<a href="cities/new"><button type="button" class="btn btn-success">+ Add City</button></a>
+<p class="center">
+<a class="addbtn" href="cities/new"><button type="button" class="btn btn-success">+ Add City</button></a>
+</p>
+
 <br>
 {% endblock %}

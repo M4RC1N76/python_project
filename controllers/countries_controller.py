@@ -27,7 +27,7 @@ def new_country():
 def create_country():
     name = request.form['name']
     visited = request.form['visited']
-    country = Country(name, visited) #country_repository.select(id)
+    country = Country(name, visited)
     # create a  country object with above info
     country_repository.save(country)
     return redirect("/countries")
