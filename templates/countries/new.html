@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="/countries" method="post">
-    <div class="form-group">
-        <label for="name">Name:</label>
-        <input class="form-control" type="text" id="name" name="name" placeholder="Country name" required autofocus />
-    </div>
+<form action="/countries" method="post"><br>
+    <div class="form">
+        <label for="name">Name:</label><br>
+        <input class="form" type="text" id="name" name="name" placeholder="Country name" required autofocus />
+    </div><br>
 
-    <div class="form-group">
-        <label for="visited">Visited:</label>
-        <select class="form-control" id="visited" name="visited">
+    <div class="form">
+        <label for="visited">Visited:</label><br>
+        <select class="form" id="visited" name="visited">
         <option value="false">False</option>
         <option value="true">True</option>
-        </select>
-    </div>
-    <button class="btn btn-primary" type="submit">Add Country</button>
+        </select><br>
+    </div><br>
+    <button class="btn" type="submit">+ Add Country</button>
 </form>
     
 {% endblock content %}

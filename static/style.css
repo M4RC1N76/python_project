@@ -1,8 +1,47 @@
 body{
     font-family: "Helvetica", arial, sans-serif; font-size: 16px;
-    /* background-image: url("https://cdn.shopify.com/s/files/1/0269/2792/3234/articles/world-travelling-map-planning_1004x.jpg?v=1593720286"); */ */
-    background-color: rgb(228, 246, 253);
-    color: black;
+    /* background-image: url("https://cdn.shopify.com/s/files/1/0269/2792/3234/articles/world-travelling-map-planning_1004x.jpg?v=1593720286"); */
+    background-color: rgb(247, 243, 243);
+    /* color: black; */
+}
+
+.content-table {
+border-collapse: collapse;
+margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 10px 10px 5px 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.15); /* does not work */
+}
+
+.content-table thead tr {
+    background-color: rgb(21, 69, 101);
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 2px solid rgb(21, 69, 101);
+}
+
+.content-table tbody tr {
+    background-color: #ede9e9;
+}
+
+.table {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.section {
+    align-content: center;
 }
 
 ul {
@@ -10,83 +49,76 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(105, 194, 232);
+    background-color:rgb(21, 69, 101);
+    color: white;
     text-align: left;
-    color:rgb(45, 59, 140);
-
-    box-shadow: 0px 0px 20px #11111166;
+    border-radius: 15px 15px 5px 5px;
+    box-shadow: 0 0 20px darkgray;
 }
 
-div.jumbotron {
-    text-align: center;
-}
-
-li {
+ul li {
     float: left;
+}
+
+.container {
+    text-align: center;
+    font-weight: bolder;
+
+    font-size: 20px;
+}
+
+form {
+    text-align: left;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+input, select {
+    font-size: 20px;
+    padding: 5px 15px;
+    box-shadow: 0px 0px 5px #11111188;
+    border: none;
+    margin-top: 5px;
+}
+label {
+    margin-left: 5px;
+    
+}
+
+button {
+    padding: 5px 25px;
+    border-radius: 50px;
+    font-family: "Helvetica";
+    font-size: 15px;
+
+    background-color: rgb(21, 69, 101);
+    box-shadow: 0px 0px 5px #11111188;
+    border: none;
+    color: #fff;
+}
+
+.vspace {
+    margin: 20px 0;
+}
+
+
+h1 {
+    font-size: 30px;
+    font-weight: bolder;
+}
+p {
+    font-size: 25px;
 }
 
 li a {
     display: block;
-    color: rgb(75, 84, 125);
-    text-align: center;
+    color: #ede9e9;
+    font-weight: bold;
+    text-align: left;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover {
     background-color: #11111177;
-}
-
-form, .form-group, .form-group {
-    margin: 0 auto;
-    width: 50%;
-}
-
-.btn[type="submit"] {
-    width: 100px;
-}
-
-form {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.form-group {
-    display: flex;
-    justify-content: space-around;
-}
-
-
-
-.edit {
-    color: rgb(54, 99, 114);
-}
-
-input[type="text"], select {
-    width: 40%;
-    margin: 0 auto;
-}
-
-a {
-    color:red;
-}
-
-section {
-text-align: left;
-margin: 30px;
-}
-
-table, tbody {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.center {
-    width: 100%;
-    text-align: center;
-}
-
-td {
-    padding: 2px 5px;
 }

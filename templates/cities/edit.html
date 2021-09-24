@@ -7,10 +7,11 @@
         <select id="visited" name="visited">
         <option value="True">True</option>
         <option value="False"{% if city.visited == False %} selected="selected"{% endif %}>False</option>
-        </select>
+        </select><br>
+
+        <div class="vspace"></div>
 
         <button type="submit">Update City</button>
 
 </form>
-<!--the above change needs to change in the visited column in countries -->
 {% endblock content %}

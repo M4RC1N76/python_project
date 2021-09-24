@@ -1,31 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action="/cities" method="post">
+<form action="/cities" method="post"><br>
 
-    <div class="form-group"> 
-        <label for="name">Name:</label>
-        <input class="form-control" type="text" id="name" name="name" placeholder="City name" required autofocus />
-    </div>
+    <div class="form"> 
+        <label for="name">Name:</label><br>
+        <input class="form" type="text" id="name" name="name" placeholder="City name" required autofocus />
+    </div><br>
 
-    <div class="form-group">
-        <label for="visited">Visited:</label>
-        <select class="form-control" id="visited" name="visited">
+    <div class="form">
+        <label for="visited">Visited:</label><br>
+        <select class="form" id="visited" name="visited">
             <option value="true">True</option>
             <option value="false">False</option> <!--lines 13, 14, 15 fixed-->
         </select>
-    </div>
+    </div><br>
 
-    <div class="form-group">
-        <label for="country">Country:</label>
-        <select class="form-control" name="country_id" id="country">
+    <div class="form">
+        <label for="country">Country:</label><br>
+        <select class="form" name="country_id" id="country">
             {% for country in countries  %}
             <option value="{{ country.id }}">{{ country.name }}</option> <!--check if line is correct-->
                 
             {% endfor %}
         </select>
-    </div>
-    <button class="btn btn-primary" type="submit">Add City</button>
+    </div><br>
+    <button class="btn" type="submit">+ Add City</button>
 </form>
 
 {% endblock content %}

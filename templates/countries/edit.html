@@ -3,14 +3,16 @@
     <p>You are in {{country.name}}. Have you been there?</p>
     <form action="/countries/{{country.id}}" method="POST">
         <label for="visited">Visited:</label>
-            <div class="form-group">
-                <select class="form-control" id="visited" name="visited">
+            <div class="form">
+                <select class="form" id="visited" name="visited">
                     <option value="True">True</option>
                     <option value="False" {% if country.visited==False %} selected="selected" {% endif %}>False</option>
                 </select>
             </div>
             
-            <button class="btn btn-primary" type="submit">Update Country</button>
+            <div class="vspace"></div>
+
+            <button class="btn" type="submit">+ Add Country</button>
     </form>
     <!--the above change needs to change in the visited column in countries -->
 {% endblock content %}
